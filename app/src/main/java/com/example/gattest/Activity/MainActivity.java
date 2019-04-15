@@ -580,10 +580,6 @@ public class MainActivity extends AppCompatActivity implements OnGetGeoCoderResu
 
         }
 
-        @Override
-        public void onConnectHotSpotMessage(String s, int i) {
-
-        }
 
 
     }
