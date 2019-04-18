@@ -27,15 +27,17 @@ public class BalanceActivity extends AppCompatActivity {
             public void onClick(View v){
                 switch (v.getId()){
                     case R.id.chongzhi:
-                        AlertDialog.Builder dialog=new AlertDialog.Builder(BalanceActivity.this);
-                        dialog.setTitle("充值提示");
-                        dialog.setMessage("小额充值请进官网，大额充值请联系GAT团队QQ");
-                        dialog.setCancelable(false);
-                        dialog.setPositiveButton("好的",new DialogInterface.OnClickListener(){
-                            @Override
-                            public void onClick(DialogInterface dialog,int which){}
-                        });
-                        dialog.show();
+//                        AlertDialog.Builder dialog=new AlertDialog.Builder(BalanceActivity.this);
+//                        dialog.setTitle("充值提示");
+//                        dialog.setMessage("小额充值请进官网，大额充值请联系GAT团队QQ");
+//                        dialog.setCancelable(false);
+//                        dialog.setPositiveButton("好的",new DialogInterface.OnClickListener(){
+//                            @Override
+//                            public void onClick(DialogInterface dialog,int which){}
+//                        });
+//                        dialog.show();
+                        Intent intent = new Intent(BalanceActivity.this,RechargeActivity.class);
+                        startActivity(intent);
                         break;
                     default:
                         break;

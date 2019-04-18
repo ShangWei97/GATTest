@@ -22,7 +22,7 @@ import com.example.gattest.constant.HttpConstant;
 import com.example.gattest.request.GetCodeReqBean;
 import com.example.gattest.request.LoginReqBean;
 import com.example.gattest.utils.HttpUtils;
-
+import com.example.gattest.utils.StringUtil;
 
 
 /**
@@ -115,12 +115,18 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
              if (pswd.trim().equals("")) {
                  if (upswd.getVisibility() == View.GONE){
                      // 进行验证码登录
-
+                     String loginCode = editText_1.getText().toString()+editText_2.getText().toString()+editText_3.getText().toString()+editText_4.getText().toString();
+                     if (StringUtil.isNullOrEmpty(loginCode)){
+                         Toast.makeText(this, "请您输入验证码！", Toast.LENGTH_SHORT).show();
+                         return;
+                     }else {
+                         reqBean.setLoginCode(loginCode);
+                     }
 
                  }else {
                      Toast.makeText(this, "请您输入密码！", Toast.LENGTH_SHORT).show();
+                     return;
                  }
-                 return;
              }else {
                  reqBean.setPassword(pswd);
              }
